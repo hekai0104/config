@@ -6,7 +6,7 @@
 server:
   port: 3001 #注册中心占用3001端口
 spring:
-  profiles: kk-item #开发环境
+  profiles: kk-item01 #开发环境
   application:
     name: kk-item
   datasource:
@@ -32,11 +32,87 @@ eureka:
     service-url: 
       defaultZone: http://eureka2001.com:2001/eureka,http://eureka2002.com:2002/eureka,http://eureka2003.com:2003/eureka
   instance:
-    instance-id: kk-item
+    instance-id: kk-item01
     prefer-ip-address: true     #访问路径可以显示IP地址     
 
 info: 
   app.name: kk01
+  company.name: kk
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 3002 #注册中心占用3002端口
+spring:
+  profiles: kk-item02 #开发环境
+  application:
+    name: kk-item
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/kk02             # 数据库名称
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.kk.model                        # 所有model别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka2001.com:2001/eureka,http://eureka2002.com:2002/eureka,http://eureka2003.com:2003/eureka
+  instance:
+    instance-id: kk-item02
+    prefer-ip-address: true     #访问路径可以显示IP地址     
+
+info: 
+  app.name: kk02
+  company.name: kk
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 3003 #注册中心占用3003端口
+spring:
+  profiles: kk-item03 #开发环境
+  application:
+    name: kk-item
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/kk03              # 数据库名称
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml        # mybatis配置文件所在路径
+  type-aliases-package: com.kk.model                        # 所有model别名类所在包
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url: 
+      defaultZone: http://eureka2001.com:2001/eureka,http://eureka2002.com:2002/eureka,http://eureka2003.com:2003/eureka
+  instance:
+    instance-id: kk-item03
+    prefer-ip-address: true     #访问路径可以显示IP地址     
+
+info: 
+  app.name: kk03
   company.name: kk
   build.artifactId: $project.artifactId$
   build.version: $project.version$
