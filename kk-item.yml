@@ -38,8 +38,8 @@ eureka:
 info: 
   app.name: kk01
   company.name: kk
-  build.artifactId: ${project.artifactId}
-  build.version: ${project.version}
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
 ---
 server:
   port: 3002 #注册中心占用3002端口
@@ -76,8 +76,8 @@ eureka:
 info: 
   app.name: kk02
   company.name: kk
-  build.artifactId: ${project.artifactId}
-  build.version: ${project.version}
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
 ---
 server:
   port: 3003 #注册中心占用3003端口
@@ -114,5 +114,5 @@ eureka:
 info: 
   app.name: kk03
   company.name: kk
-  build.artifactId: ${project.artifactId}
-  build.version: ${project.version}
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
