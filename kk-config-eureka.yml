@@ -6,7 +6,7 @@
 server:
   port: 2001 #注册中心占用2001端口
 spring:
-  profiles: kk #开发环境
+  profiles: dev #开发环境
   application:
     name: kk-config-eureka
 eureka:
