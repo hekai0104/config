@@ -6,7 +6,7 @@
 server:
   port: 2001 #注册中心占用2001端口
 spring:
-  profiles: dev #开发环境
+  profiles: eureka2001
   application:
     name: kk-config-eureka
 eureka:
@@ -16,4 +16,34 @@ eureka:
     register-with-eureka: false     #false表示不向注册中心注册自己。
     fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
     service-url: 
-       defaultZone: http://eureka2001.com:2001/eureka/
+       defaultZone: http://eureka2002.com:2002/eureka/,http://eureka2003.com:2003/eureka/
+---
+server:
+  port: 2002 #注册中心占用2002端口
+spring:
+  profiles: eureka2002
+  application:
+    name: kk-config-eureka
+eureka:
+  instance: 
+    hostname: eureka2002.com #eureka服务端的实例名称
+  client: 
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url: 
+       defaultZone: http://eureka2001.com:2001/eureka/,http://eureka2003.com:2003/eureka/
+---
+server:
+  port: 2003 #注册中心占用2003端口
+spring:
+  profiles: eureka2003
+  application:
+    name: kk-config-eureka
+eureka:
+  instance: 
+    hostname: eureka2003.com #eureka服务端的实例名称
+  client: 
+    register-with-eureka: false     #false表示不向注册中心注册自己。
+    fetch-registry: false     #false表示自己端就是注册中心，我的职责就是维护服务实例，并不需要去检索服务
+    service-url: 
+       defaultZone: http://eureka2001.com:2001/eureka/,http://eureka2002.com:2002/eureka/
