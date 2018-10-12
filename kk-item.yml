@@ -34,6 +34,14 @@ eureka:
     instance-id: kk-item01
     prefer-ip-address: true     #访问路径可以显示IP地址     
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
 info: 
   app.name: kk01
   company.name: kk
@@ -71,6 +79,14 @@ eureka:
     instance-id: kk-item02
     prefer-ip-address: true     #访问路径可以显示IP地址     
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
 info: 
   app.name: kk02
   company.name: kk
@@ -107,6 +123,14 @@ eureka:
   instance:
     instance-id: kk-item03
     prefer-ip-address: true     #访问路径可以显示IP地址     
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
 
 info: 
   app.name: kk03
