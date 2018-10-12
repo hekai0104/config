@@ -27,6 +27,8 @@ mybatis:
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
+logging.level.mybatis.mapper=debug
+
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
@@ -65,6 +67,8 @@ mybatis:
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
+logging.level.mybatis.mapper=debug
+
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
@@ -102,6 +106,8 @@ mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+
+logging.level.mybatis.mapper=debug
 
 eureka:
   client: #客户端注册进eureka服务列表内
