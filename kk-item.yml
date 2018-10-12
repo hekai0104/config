@@ -27,7 +27,10 @@ mybatis:
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
-logging.level.mybatis.mapper=debug
+logging:
+  level:
+    mybatis:
+      mapper: debug
 
 eureka:
   client: #客户端注册进eureka服务列表内
@@ -67,7 +70,10 @@ mybatis:
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
-logging.level.mybatis.mapper=debug
+logging:
+  level:
+    mybatis:
+      mapper: debug
 
 eureka:
   client: #客户端注册进eureka服务列表内
@@ -107,7 +113,10 @@ mybatis:
   mapper-locations:
   - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
-logging.level.mybatis.mapper=debug
+logging:
+  level:
+    mybatis:
+      mapper: debug
 
 eureka:
   client: #客户端注册进eureka服务列表内
