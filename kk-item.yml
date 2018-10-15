@@ -48,12 +48,6 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 
-spring:
-   redis:
-      cluster:
-        nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
-        timeout: 2000
-        max-redirects: 7
 
 ---
 
