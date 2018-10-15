@@ -48,38 +48,13 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 
-
-# Redis数据库索引（默认为0）
-spring:
-  redis:
-    database: 0  
-# Redis服务器地址
-spring:
-  redis:
-    host: 192.168.195.100
-# Redis服务器连接端口
-spring:
-  redis:
-    port: 7001
-# Redis服务器连接密码（默认为空）
-spring:
-  redis:
-    password=
-# 连接超时时间（毫秒）
-spring:
-  redis:
-    timeout: 3600
-#默认过期时间
-spring:
-  redis:
-    defaultExpiration: 360000
-
 #############redis集群#############
 spring:
   redis:
     cluster:
       nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
-
+      timeout: 2000
+      max-redirects: 7
 
 ---
 server:
