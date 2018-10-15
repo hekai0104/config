@@ -14,7 +14,7 @@ spring:
     driver-class-name: net.sf.log4jdbc.DriverSpy              # mysql驱动包
     url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01              # 数据库名称
     username: root
-    password: root
+    password: hkroot
     dbcp2:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
@@ -48,7 +48,7 @@ info:
   build.artifactId: $project.artifactId$
   build.version: $project.version$
 
-#############redis集群#############
+#redis集群
 spring:
   redis:
     cluster:
@@ -68,7 +68,7 @@ spring:
     driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包
     url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk02             # 数据库名称
     username: root
-    password: root
+    password: hkroot
     dbcp2:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
@@ -113,7 +113,7 @@ spring:
     driver-class-name: net.sf.log4jdbc.DriverSpy            # mysql驱动包
     url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk03              # 数据库名称
     username: root
-    password: root
+    password: hkroot
     dbcp2:
       min-idle: 5                                           # 数据库连接池的最小维持连接数
       initial-size: 5                                       # 初始化连接数
