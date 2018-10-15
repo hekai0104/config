@@ -20,6 +20,11 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+  redis:
+    cluster:
+      nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
+      timeout: 2000
+      max-redirects: 7
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
