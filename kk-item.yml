@@ -29,6 +29,9 @@ spring:
     addresses: 192.168.195.100:5672,192.168.195.100:5673,192.168.195.100:5674
     username: guest
     password: guest
+  elasticsearch:
+    jest:
+      uris: http://192.168.195.100:9200
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
