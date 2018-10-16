@@ -40,6 +40,11 @@ spring:
     username: 1336763640@qq.com
     password: dhpiubhytbsoibic
     host: smtp.qq.com
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
