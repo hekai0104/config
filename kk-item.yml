@@ -32,6 +32,10 @@ spring:
   elasticsearch:
     jest:
       uris: http://192.168.195.100:9200
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.195.100:9300
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
