@@ -36,6 +36,10 @@ spring:
     elasticsearch:
       cluster-name: elasticsearch
       cluster-nodes: 192.168.195.100:9300
+  mail:
+    username: 1336763640@qq.com
+    password: dhpiubhytbsoibic
+    host: smtp.qq.com
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
