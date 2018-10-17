@@ -45,6 +45,8 @@ spring:
         smtp:
           ssl:
             enable: true
+  thymeleaf:
+    mode: LEGACYHTML5
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
