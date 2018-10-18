@@ -26,7 +26,7 @@ spring:
       timeout: 2000
       max-redirects: 7
   rabbitmq:
-    addresses: 192.168.195.100:5672,192.168.195.100:5673,192.168.195.100:5674
+    addresses: 192.168.195.100:5672
     username: guest
     password: guest
   elasticsearch:
@@ -46,7 +46,24 @@ spring:
           ssl:
             enable: true
   thymeleaf:
+    cache:false
     mode: LEGACYHTML5
+
+dubbo:
+  application:
+    name: kk-item-dubbo
+  registry:
+    address: zookeeper://192.168.195.100:2181
+
+management:
+  security:
+    enabled: false
+  context-path: /manage
+
+endpoints:
+  enabled: false  #关闭所有端点
+  health:
+    enabled:  true #只开启health
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
