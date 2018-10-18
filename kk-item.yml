@@ -46,7 +46,7 @@ spring:
           ssl:
             enable: true
   thymeleaf:
-    cache:false
+    cache: false
     mode: LEGACYHTML5
 
 dubbo:
