@@ -34,10 +34,10 @@ spring:
   elasticsearch:
     jest:
       uris: http://192.168.195.100:9200
-  #data:
-   # elasticsearch:
-     # cluster-name: elasticsearch
-     # cluster-nodes: 192.168.195.100:9300
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.195.100:9300
   mail:
     username: 1336763640@qq.com
     password: dhpiubhytbsoibic
