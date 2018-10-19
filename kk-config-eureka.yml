@@ -9,6 +9,12 @@ spring:
   profiles: eureka2001
   application:
     name: kk-config-eureka
+  security:  
+    basic:  
+      enabled: true  
+    user:  
+      name: admin
+      password: admin
 eureka:
   instance: 
     hostname: eureka2001.com #eureka服务端的实例名称
@@ -24,6 +30,12 @@ spring:
   profiles: eureka2002
   application:
     name: kk-config-eureka
+  security:  
+    basic:  
+      enabled: true  
+    user:  
+      name: admin
+      password: admin
 eureka:
   instance: 
     hostname: eureka2002.com #eureka服务端的实例名称
@@ -39,6 +51,12 @@ spring:
   profiles: eureka2003
   application:
     name: kk-config-eureka
+  security:  
+    basic:  
+      enabled: true  
+    user:  
+      name: admin
+      password: admin
 eureka:
   instance: 
     hostname: eureka2003.com #eureka服务端的实例名称
