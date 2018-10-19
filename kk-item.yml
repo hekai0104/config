@@ -60,7 +60,7 @@ dubbo:
 management:
   security:
     enabled: false
-  context-path: /manage
+  #context-path: /manage
 
 endpoints:
   enabled: false  #关闭所有端点
@@ -155,7 +155,7 @@ dubbo:
 management:
   security:
     enabled: false
-  context-path: /manage
+  #context-path: /manage
 
 endpoints:
   enabled: false  #关闭所有端点
@@ -246,7 +246,7 @@ dubbo:
 management:
   security:
     enabled: false
-  context-path: /manage
+  #context-path: /manage
 
 endpoints:
   enabled: false  #关闭所有端点
