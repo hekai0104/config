@@ -10,7 +10,7 @@ spring:
   application:
     name: kk-item
   datasource:
-    #type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包
     url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01           # 数据库名称
     username: root
