@@ -115,52 +115,6 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-  redis:
-    cluster:
-      nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
-      timeout: 2000
-      max-redirects: 7
-  rabbitmq:
-    addresses: 192.168.195.100
-    #port: 5672
-    #virtual-host: /
-    username: guest
-    password: guest
-  elasticsearch:
-    jest:
-      uris: http://192.168.195.100:9200
-  data:
-    elasticsearch:
-      cluster-name: elasticsearch
-      cluster-nodes: 192.168.195.100:9300
-  mail:
-    username: 1336763640@qq.com
-    password: dhpiubhytbsoibic
-    host: smtp.qq.com
-    properties:
-      mail:
-        smtp:
-          ssl:
-            enable: true
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
-dubbo:
-  application:
-    name: kk-item-dubbo
-  registry:
-    address: zookeeper://192.168.195.100:2181
-
-management:
-  security:
-    enabled: false
-  context-path: /manage
-
-endpoints:
-  enabled: false  #关闭所有端点
-  health:
-    enabled:  true #只开启health
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
@@ -206,52 +160,6 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
-  redis:
-    cluster:
-      nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
-      timeout: 2000
-      max-redirects: 7
-  rabbitmq:
-    addresses: 192.168.195.100
-    #port: 5672
-    #virtual-host: /
-    username: guest
-    password: guest
-  elasticsearch:
-    jest:
-      uris: http://192.168.195.100:9200
-  data:
-    elasticsearch:
-      cluster-name: elasticsearch
-      cluster-nodes: 192.168.195.100:9300
-  mail:
-    username: 1336763640@qq.com
-    password: dhpiubhytbsoibic
-    host: smtp.qq.com
-    properties:
-      mail:
-        smtp:
-          ssl:
-            enable: true
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
-dubbo:
-  application:
-    name: kk-item-dubbo
-  registry:
-    address: zookeeper://192.168.195.100:2181
-
-management:
-  security:
-    enabled: false
-  context-path: /manage
-
-endpoints:
-  enabled: false  #关闭所有端点
-  health:
-    enabled:  true #只开启health
 
 mybatis:
   type-aliases-package: com.kk.model                        # 所有model别名类所在包
