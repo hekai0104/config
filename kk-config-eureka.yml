@@ -11,8 +11,8 @@ spring:
     name: kk-config-eureka
 security:  
   basic:  
-    enabled: true  
-  user:  
+    enabled: true
+  user:
     name: admin
     password: admin
 eureka:
@@ -32,8 +32,8 @@ spring:
     name: kk-config-eureka
 security:  
   basic:  
-    enabled: true  
-  user:  
+    enabled: true
+  user:
     name: admin
     password: admin
 eureka:
@@ -53,8 +53,8 @@ spring:
     name: kk-config-eureka
 security:  
   basic:  
-    enabled: true  
-  user:  
+    enabled: true
+  user:
     name: admin
     password: admin
 eureka:
