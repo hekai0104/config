@@ -12,7 +12,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包
-    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01           # 数据库名称
+    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
     username: root
     password: hkroot
     dbcp2:
@@ -107,7 +107,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包
-    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk02             # 数据库名称
+    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk02?characterEncoding=UTF-8             # 数据库名称
     username: root
     password: hkroot
     dbcp2:
@@ -198,7 +198,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: net.sf.log4jdbc.DriverSpy            # mysql驱动包
-    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk03              # 数据库名称
+    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk03?characterEncoding=UTF-8              # 数据库名称
     username: root
     password: hkroot
     dbcp2:
