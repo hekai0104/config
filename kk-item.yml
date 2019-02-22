@@ -93,6 +93,10 @@ info:
   company.name: kk
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+logging:
+  level:
+    com:
+      kk: DEBUG
 
 
 
@@ -188,6 +192,10 @@ info:
   company.name: kk
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+logging:
+  level:
+    com:
+      kk: DEBUG
 ---
 server:
   port: 3003 #注册中心占用3003端口
@@ -278,4 +286,8 @@ info:
   app.name: kk03
   company.name: kk
   build.artifactId: $project.artifactId$
+logging:
+  level:
+    com:
+      kk: DEBUG
   build.version: $project.version$
