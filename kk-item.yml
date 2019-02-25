@@ -96,7 +96,8 @@ info:
 logging:
   level:
     com:
-      kk: DEBUG
+      kk:
+        dao: DEBUG
 
 
 
@@ -195,7 +196,8 @@ info:
 logging:
   level:
     com:
-      kk: DEBUG
+      kk:
+        dao: DEBUG
 ---
 server:
   port: 3003 #注册中心占用3003端口
@@ -289,5 +291,6 @@ info:
 logging:
   level:
     com:
-      kk: DEBUG
+      kk:
+        dao: DEBUG
   build.version: $project.version$
