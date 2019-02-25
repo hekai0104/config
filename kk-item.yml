@@ -47,15 +47,6 @@ spring:
         smtp:
           ssl:
             enable: true
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
-dubbo:
-  application:
-    name: kk-item-dubbo
-  registry:
-    address: zookeeper://192.168.195.100:2181
 
 management:
   security:
@@ -142,15 +133,6 @@ spring:
         smtp:
           ssl:
             enable: true
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
-dubbo:
-  application:
-    name: kk-item-dubbo
-  registry:
-    address: zookeeper://192.168.195.100:2181
 
 management:
   security:
@@ -233,15 +215,6 @@ spring:
         smtp:
           ssl:
             enable: true
-  thymeleaf:
-    cache: false
-    mode: LEGACYHTML5
-
-dubbo:
-  application:
-    name: kk-item-dubbo
-  registry:
-    address: zookeeper://192.168.195.100:2181
 
 management:
   security:
