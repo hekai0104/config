@@ -40,7 +40,7 @@ spring:
       cluster-nodes: 192.168.195.100:9300
   mail:
     username: 1336763640@qq.com
-    password: fpxhpwuiforehdfb
+    password: pkhhkbtqhaxnjfch
     host: smtp.qq.com
     properties:
       mail:
@@ -126,7 +126,7 @@ spring:
       cluster-nodes: 192.168.195.100:9300
   mail:
     username: 1336763640@qq.com
-    password: dhpiubhytbsoibic
+    password: pkhhkbtqhaxnjfch
     host: smtp.qq.com
     properties:
       mail:
@@ -208,7 +208,7 @@ spring:
       cluster-nodes: 192.168.195.100:9300
   mail:
     username: 1336763640@qq.com
-    password: dhpiubhytbsoibic
+    password: pkhhkbtqhaxnjfch
     host: smtp.qq.com
     properties:
       mail:
