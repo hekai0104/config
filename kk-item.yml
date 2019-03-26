@@ -10,16 +10,27 @@ spring:
   application:
     name: kk-item
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-    driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
-    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
-    username: root
-    password: hkroot
-    dbcp2:
-      min-idle: 5                                           # 数据库连接池的最小维持连接数
-      initial-size: 5                                       # 初始化连接数
-      max-total: 5                                          # 最大连接数
-      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+    system: 
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
+      username: root
+      password: hkroot
+      driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
+    workflow:
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/activiti?characterEncoding=UTF-8           # 数据库名称
+      username: root
+      password: hkroot
+      driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+#    driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
+#    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
+#    username: root
+#    password: hkroot
+#    dbcp2:
+#      min-idle: 5                                           # 数据库连接池的最小维持连接数
+#      initial-size: 5                                       # 初始化连接数
+#      max-total: 5                                          # 最大连接数
+#      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
   druid:
     druidUrl: /druid/*
     allow: 127.0.0.1 #白名单
@@ -88,10 +99,10 @@ endpoints:
   health:
     enabled:  true #只开启health
 
-mybatis:
-  type-aliases-package: com.kk.model                        # 所有model别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
+#mybatis:
+#  type-aliases-package: com.kk.model                        # 所有model别名类所在包
+#  mapper-locations:
+#  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
 eureka:
   client: #客户端注册进eureka服务列表内
