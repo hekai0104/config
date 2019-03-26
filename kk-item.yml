@@ -11,12 +11,12 @@ spring:
     name: kk-item
   datasource:
     system: 
-      jdbcUrl: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
+      jdbc-url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
       username: root
       password: hkroot
       driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
     workflow:
-      jdbcUrl: jdbc:log4jdbc:mysql://192.168.195.100:3306/activiti?characterEncoding=UTF-8           # 数据库名称
+      jdbc-url: jdbc:log4jdbc:mysql://192.168.195.100:3306/activiti?characterEncoding=UTF-8           # 数据库名称
       username: root
       password: hkroot
       driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
