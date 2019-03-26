@@ -20,6 +20,13 @@ spring:
       initial-size: 5                                       # 初始化连接数
       max-total: 5                                          # 最大连接数
       max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+  druid:
+    druidUrl: /druid/*
+    allow: 127.0.0.1 #白名单
+    deny: 192.168.192.199 #黑名单
+    loginUsername: admin #登录名
+    loginPassword: admin #登录密码
+    resetEnable: true #是否有权利重置数据
   redis:
     cluster:
       nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
@@ -47,7 +54,30 @@ spring:
         smtp:
           ssl:
             enable: true
-
+            
+fdfs: # 分布式文件系统fastdfs配置
+  soTimeout: 1500 # socket连接超时时长
+  connectTimeout: 600 # 连接tracker服务器超时时长
+  pool:
+    max-total: 153 # 从池中借出的对象的最大数目
+    max-wait-millis: 102 # 获取连接时的最大等待毫秒数100
+  thumbImage: # 缩略图生成参数，可选
+    width: 150
+    height: 150
+  trackerList: # 跟踪服务器tracker_server请求地址,支持多个，这里只有一个，如果有多个在下方加- x.x.x.x:port
+    - 192.168.195.100:22122
+  web-server-url: http://192.168.195.100/ # 存储服务器storage_server访问地址
+  spring:
+    http:
+      multipart:
+        max-file-size: 100MB # 最大支持文件大小
+        max-request-size: 100MB # 最大支持请求大小
+        
+security:
+  url: /login_p,/druid/*,/guest/*,/message/getList
+web:
+  url: /login_p,/druid/*
+  
 management:
   security:
     enabled: false
