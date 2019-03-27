@@ -81,7 +81,7 @@ spring:
 #      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
   druid:
     druidUrl: /druid/*
-    allow: 0.0.0.0 #白名单
+    allow: 192.168.1.242 #白名单
     deny: 192.168.192.199 #黑名单
     loginUsername: admin #登录名
     loginPassword: admin #登录密码
