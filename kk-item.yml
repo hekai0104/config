@@ -11,7 +11,7 @@ spring:
     name: kk-item
   datasource:
     system: 
-      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8&useSSL=false           # 数据库名称
       username: root
       password: hkroot
       driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
@@ -39,7 +39,7 @@ spring:
       #请勿配置timeBetweenLogStatsMillis 会定时输出日志 并导致统计的sql清零
       #timeBetweenLogStatsMillis=20000
     workflow:
-      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/activiti?characterEncoding=UTF-8           # 数据库名称
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/activiti?characterEncoding=UTF-8&useSSL=false           # 数据库名称
       username: root
       password: hkroot
       driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
