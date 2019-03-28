@@ -133,9 +133,9 @@ fdfs: # 分布式文件系统fastdfs配置
         max-request-size: 100MB # 最大支持请求大小
         
 security:
-  url: /login_p,/druid/**,/guest/**
+  url: /login,/login_p,/druid/**,/guest/**
 web:
-  url: /login_p,/druid/**,/guest/getToken
+  url: /login,/login_p,/druid/**,/guest/getToken
   
 management:
   security:
