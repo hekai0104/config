@@ -68,6 +68,7 @@ spring:
       #timeBetweenLogStatsMillis=20000
   activiti:
     check-process-definitions: false #检查流程文件
+    job-executor-activate: false
 #  datasource:
 #    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
 #    driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
