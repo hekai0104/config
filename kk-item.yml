@@ -83,8 +83,8 @@ spring:
     druidUrl: /druid/*
     allow: 192.168.195.1 #白名单
     deny: 192.168.192.199 #黑名单
-    loginUsername: admin #登录名
-    loginPassword: admin #登录密码
+    loginUsername:  #登录名
+    loginPassword:  #登录密码
     resetEnable: true #是否有权利重置数据
   redis:
     cluster:
