@@ -68,17 +68,6 @@ spring:
       #timeBetweenLogStatsMillis=20000
   activiti:
     check-process-definitions: false #检查流程文件
-#  datasource:
-#    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-#    driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
-#    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8           # 数据库名称
-#    username: root
-#    password: hkroot
-#    dbcp2:
-#      min-idle: 5                                           # 数据库连接池的最小维持连接数
-#      initial-size: 5                                       # 初始化连接数
-#      max-total: 5                                          # 最大连接数
-#      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
   druid:
     druidUrl: /druid/*
     allow: #白名单
@@ -149,11 +138,6 @@ endpoints:
   health:
     enabled:  true #只开启health
 
-#mybatis:
-#  type-aliases-package: com.kk.model                        # 所有model别名类所在包
-#  mapper-locations:
-#  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
-
 eureka:
   client: #客户端注册进eureka服务列表内
     service-url: 
@@ -178,7 +162,14 @@ info:
 
 
 
+
+
 ---
+
+
+
+
+
 
 server:
   port: 3002 #注册中心占用3002端口
@@ -187,16 +178,73 @@ spring:
   application:
     name: kk-item
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-    driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包
-    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk02?characterEncoding=UTF-8             # 数据库名称
-    username: root
-    password: hkroot
-    dbcp2:
-      min-idle: 5                                           # 数据库连接池的最小维持连接数
-      initial-size: 5                                       # 初始化连接数
-      max-total: 5                                          # 最大连接数
-      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+    system: 
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8&useSSL=false           # 数据库名称
+      username: root
+      password: hkroot
+      driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
+      #初始化连接池的连接数量 大小，最小，最大
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      #配置获取连接等待超时的时间
+      maxWait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      #是否缓存preparedStatement，也就是PSCache  官方建议MySQL下建议关闭   个人建议如果想用SQL防火墙 建议打开
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      #请勿配置timeBetweenLogStatsMillis 会定时输出日志 并导致统计的sql清零
+      #timeBetweenLogStatsMillis=20000
+    workflow:
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/activiti?characterEncoding=UTF-8&useSSL=false           # 数据库名称
+      username: root
+      password: hkroot
+      driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
+      #初始化连接池的连接数量 大小，最小，最大
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      #配置获取连接等待超时的时间
+      maxWait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      #是否缓存preparedStatement，也就是PSCache  官方建议MySQL下建议关闭   个人建议如果想用SQL防火墙 建议打开
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      #请勿配置timeBetweenLogStatsMillis 会定时输出日志 并导致统计的sql清零
+      #timeBetweenLogStatsMillis=20000
+  activiti:
+    check-process-definitions: false #检查流程文件
+  druid:
+    druidUrl: /druid/*
+    allow: #白名单
+    deny: #黑名单
+    loginUsername:  #登录名
+    loginPassword:  #登录密码
+    resetEnable: true #是否有权利重置数据
+  session:
+    store-type: redis
   redis:
     cluster:
       nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
@@ -224,6 +272,30 @@ spring:
         smtp:
           ssl:
             enable: true
+            
+fdfs: # 分布式文件系统fastdfs配置
+  soTimeout: 1500 # socket连接超时时长
+  connectTimeout: 600 # 连接tracker服务器超时时长
+  pool:
+    max-total: 153 # 从池中借出的对象的最大数目
+    max-wait-millis: 102 # 获取连接时的最大等待毫秒数100
+  thumbImage: # 缩略图生成参数，可选
+    width: 150
+    height: 150
+  trackerList: # 跟踪服务器tracker_server请求地址,支持多个，这里只有一个，如果有多个在下方加- x.x.x.x:port
+    - 192.168.195.100:22122
+  web-server-url: http://192.168.195.100/ # 存储服务器storage_server访问地址
+  spring:
+    http:
+      multipart:
+        max-file-size: 100MB # 最大支持文件大小
+        max-request-size: 100MB # 最大支持请求大小
+        
+security:
+  url: /login_p,/druid/**,/guest/**
+web:
+  url: /login_p,/druid/**,/swagger-resources/**,/guest/getToken,/error
+  
 
 management:
   security:
@@ -234,11 +306,6 @@ endpoints:
   enabled: false  #关闭所有端点
   health:
     enabled:  true #只开启health
-
-mybatis:
-  type-aliases-package: com.kk.model                        # 所有model别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
 eureka:
   client: #客户端注册进eureka服务列表内
@@ -261,7 +328,21 @@ info:
   company.name: kk
   build.artifactId: $project.artifactId$
   build.version: $project.version$
+  
+  
+  
+  
+  
+  
+  
+  
 ---
+
+
+
+
+
+
 server:
   port: 3003 #注册中心占用3003端口
 spring:
@@ -269,16 +350,73 @@ spring:
   application:
     name: kk-item
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
-    driver-class-name: net.sf.log4jdbc.DriverSpy            # mysql驱动包
-    url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk03?characterEncoding=UTF-8              # 数据库名称
-    username: root
-    password: hkroot
-    dbcp2:
-      min-idle: 5                                           # 数据库连接池的最小维持连接数
-      initial-size: 5                                       # 初始化连接数
-      max-total: 5                                          # 最大连接数
-      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+    system: 
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/kk01?characterEncoding=UTF-8&useSSL=false           # 数据库名称
+      username: root
+      password: hkroot
+      driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
+      #初始化连接池的连接数量 大小，最小，最大
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      #配置获取连接等待超时的时间
+      maxWait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      #是否缓存preparedStatement，也就是PSCache  官方建议MySQL下建议关闭   个人建议如果想用SQL防火墙 建议打开
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      #请勿配置timeBetweenLogStatsMillis 会定时输出日志 并导致统计的sql清零
+      #timeBetweenLogStatsMillis=20000
+    workflow:
+      url: jdbc:log4jdbc:mysql://192.168.195.100:3306/activiti?characterEncoding=UTF-8&useSSL=false           # 数据库名称
+      username: root
+      password: hkroot
+      driver-class-name: net.sf.log4jdbc.DriverSpy             # mysql驱动包com.mysql.jdbc.Driver
+      #初始化连接池的连接数量 大小，最小，最大
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      #配置获取连接等待超时的时间
+      maxWait: 60000
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      #配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      #是否缓存preparedStatement，也就是PSCache  官方建议MySQL下建议关闭   个人建议如果想用SQL防火墙 建议打开
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      #配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+      filters: stat,wall,log4j
+      #通过connectProperties属性来打开mergeSql功能；慢SQL记录
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+      #请勿配置timeBetweenLogStatsMillis 会定时输出日志 并导致统计的sql清零
+      #timeBetweenLogStatsMillis=20000
+  activiti:
+    check-process-definitions: false #检查流程文件
+  druid:
+    druidUrl: /druid/*
+    allow: #白名单
+    deny: #黑名单
+    loginUsername:  #登录名
+    loginPassword:  #登录密码
+    resetEnable: true #是否有权利重置数据
+  session:
+    store-type: redis
   redis:
     cluster:
       nodes: 192.168.195.100:7001,192.168.195.100:7002,192.168.195.100:7003,192.168.195.100:7004,192.168.195.100:7005,192.168.195.100:7006
@@ -306,6 +444,30 @@ spring:
         smtp:
           ssl:
             enable: true
+            
+fdfs: # 分布式文件系统fastdfs配置
+  soTimeout: 1500 # socket连接超时时长
+  connectTimeout: 600 # 连接tracker服务器超时时长
+  pool:
+    max-total: 153 # 从池中借出的对象的最大数目
+    max-wait-millis: 102 # 获取连接时的最大等待毫秒数100
+  thumbImage: # 缩略图生成参数，可选
+    width: 150
+    height: 150
+  trackerList: # 跟踪服务器tracker_server请求地址,支持多个，这里只有一个，如果有多个在下方加- x.x.x.x:port
+    - 192.168.195.100:22122
+  web-server-url: http://192.168.195.100/ # 存储服务器storage_server访问地址
+  spring:
+    http:
+      multipart:
+        max-file-size: 100MB # 最大支持文件大小
+        max-request-size: 100MB # 最大支持请求大小
+        
+security:
+  url: /login_p,/druid/**,/guest/**
+web:
+  url: /login_p,/druid/**,/swagger-resources/**,/guest/getToken,/error
+  
 
 management:
   security:
@@ -316,11 +478,6 @@ endpoints:
   enabled: false  #关闭所有端点
   health:
     enabled:  true #只开启health
-
-mybatis:
-  type-aliases-package: com.kk.model                        # 所有model别名类所在包
-  mapper-locations:
-  - classpath:mybatis/mapper/**/*.xml                       # mapper映射文件
 
 eureka:
   client: #客户端注册进eureka服务列表内
