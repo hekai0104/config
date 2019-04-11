@@ -126,7 +126,7 @@ fdfs: # 分布式文件系统fastdfs配置
 security:
   url: /login_p,/druid/**,/guest/**
 web:
-  url: /login_p,/druid/**,/swagger-resources/**,/guest/getToken,/error
+  url: /login_p,/druid/**,/swagger-resources/**,/guest/**,/error
   
 management:
   security:
@@ -294,7 +294,7 @@ fdfs: # 分布式文件系统fastdfs配置
 security:
   url: /login_p,/druid/**,/guest/**
 web:
-  url: /login_p,/druid/**,/swagger-resources/**,/guest/getToken,/error
+  url: /login_p,/druid/**,/swagger-resources/**,/guest/**,/error
   
 
 management:
@@ -466,7 +466,7 @@ fdfs: # 分布式文件系统fastdfs配置
 security:
   url: /login_p,/druid/**,/guest/**
 web:
-  url: /login_p,/druid/**,/swagger-resources/**,/guest/getToken,/error
+  url: /login_p,/druid/**,/swagger-resources/**,/guest/**,/error
   
 
 management:
