@@ -66,6 +66,7 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       #请勿配置timeBetweenLogStatsMillis 会定时输出日志 并导致统计的sql清零
       #timeBetweenLogStatsMillis=20000
+#关闭验证自动部署，不关闭每次启动都会去部署resources/processes文件夹下面的所有资源文件
   activiti:
     check-process-definitions: false #检查流程文件
   druid:
